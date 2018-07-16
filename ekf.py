@@ -26,7 +26,7 @@ def sense(data):
 	return sensor_data
 
 def initial_state(data):
-	P = np.array([0.1, 10.*np.pi/180., 0.5])**2
+	P = np.diag([0.1, 10.*np.pi/180., 0.5])**2
 	state = [data[0], 0, 0]
 
 	return [state, P]
@@ -90,7 +90,7 @@ for i in range(1,50):
 	P = P_updated
 
 # plt.plot(ground_truth)
-plt.plot(sensor_data,label="sensor_data")
+plt.plot(sensor_data[1:],label="sensor_data")
 plt.plot(predicted,label="predicted_values")
 plt.ylabel("distance")
 plt.legend()
