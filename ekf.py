@@ -14,7 +14,7 @@ def true_data():
 		theta = data[i-1][1]
 		vel = data[i-1][2]
 		dt = 1./30.
-		dl+= vel*dt*theta
+		dl+= vel*dt*math.cos(theta)
 		data.append([dl,theta,vel])
 
 	return data
